@@ -1,0 +1,91 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+  - changeSet:
+      id: 1
+      author: vitalii
+      changes:
+        - createTable:
+            tableName: polls
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: date_start
+                  type: date
+              - column:
+                  name: date_finish
+                  type: date
+              - column:
+                  name: activity
+                  type: boolean
+  - changeSet:
+      id: 2
+      author: vitalii
+      comment: "Example poll"
+      changes:
+        - insert:
+            tableName: polls
+            columns:
+              - column:
+                  name: name
+                  value: "Who is girl?"
+              - column:
+                  name: date_start
+                  value: "2012-05-08"
+              - column:
+                  name: date_finish
+                  value: "2014-09-17"
+              - column:
+                  name: activity
+                  value: 'false'
+  - changeSet:
+      id: 3
+      author: vitalii
+      comment: "Example poll"
+      changes:
+        - insert:
+            tableName: polls
+            columns:
+              - column:
+                  name: name
+                  value: "Who is boy?"
+              - column:
+                  name: date_start
+                  value: "2016-05-08"
+              - column:
+                  name: date_finish
+                  value: "2018-09-17"
+              - column:
+                  name: activity
+                  value: 'false'
+  - changeSet:
+      id: 4
+      author: vitalii
+      comment: "Example poll"
+      changes:
+        - insert:
+            tableName: polls
+            columns:
+              - column:
+                  name: name
+                  value: "Who is dog?"
+              - column:
+                  name: date_start
+                  value: "2020-05-08"
+              - column:
+                  name: date_finish
+                  value: "2021-09-17"
+              - column:
+                  name: activity
+                  value: 'true'
